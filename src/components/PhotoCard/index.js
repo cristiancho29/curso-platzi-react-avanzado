@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from '@reach/router'
 import { ImgWrapper, Img, Article } from './styles'
 import { FavButton } from './../FavButton'
 import { ToggleLikeMutation } from './../../container/ToggleLikeMutation'
@@ -18,11 +19,11 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
       {
         show
           ? <Fragment>
-            <a href={`/?detail=${id}`}>
+            <Link to={`/detail/${id}`}>
               <ImgWrapper>
                 <Img src={src} />
               </ImgWrapper>
-            </a>
+            </Link>
             <ToggleLikeMutation>
               {
                 (toggleLike) => {
